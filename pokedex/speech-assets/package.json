@@ -1,0 +1,17 @@
+{
+  "name": "speech-assets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pokemons.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Michael Chen <mikeechen915@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "https": "^1.0.0",
+    "request": "^2.78.0",
+    "request-promise": "^4.1.1"
+  }
+}

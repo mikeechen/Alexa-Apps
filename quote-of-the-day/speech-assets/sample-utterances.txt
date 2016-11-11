@@ -1,0 +1,14 @@
+GetQuoteIntent a quote
+GetQuoteIntent an inspiring quote
+GetQuoteIntent tell me a quote
+GetQuoteIntent tell me an inspiring quote
+GetQuoteIntent give me a quote
+GetQuoteIntent give me an inspiring quote
+GetQuoteIntent tell me quote
+GetQuoteIntent tell me an inspiring quote
+GetQuoteIntent give me quote
+GetQuoteIntent give me an inspiring quote
+GetQuoteIntent give me some quote
+GetQuoteIntent give me some inspiring quote
+GetQuoteIntent tell me quote
+GetQuoteIntent give me quote

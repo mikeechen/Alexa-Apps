@@ -1,0 +1,11 @@
+PokemonIntent tell me about {pokemon}
+PokemonIntent what is {pokemon}
+PokemonIntent {pokemon}
+PokemonIntent search for {pokemon}
+PokemonIntent what is {pokemon} strong against
+PokemonIntent what is {pokemon} weak against
+PokemonIntent what type is {pokemon}
+PokemonIntent who is {pokemon}
+PokemonIntent what are some {pokemon} facts
+PokemonIntent about {pokemon}
+PokemonIntent about {pokemon} facts

@@ -1,0 +1,20 @@
+{
+  "name": "lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Michael Chen <mikeechen915@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "alexa-lambda-skill": "^4.0.1",
+    "alexa-response": "^4.0.1",
+    "alexa-sdk": "^1.0.6",
+    "https": "^1.0.0",
+    "request": "^2.76.0",
+    "request-promise": "^4.1.1"
+  }
+}

@@ -1,0 +1,16 @@
+GetFactsIntent give me a fact about cats
+GetFactsIntent give me some facts about cats
+GetFactsIntent give me a cool fact about cats
+GetFactsIntent give me cool facts about cats
+GetFactsIntent tell me a fact about cats
+GetFactsIntent tell me facts about cats
+GetFactsIntent tell me some facts about cats
+GetFactsIntent tell me cool facts about cats
+GetFactsIntent what are some facts about cats
+GetFactsIntent what is a fact about cats
+GetFactsIntent what are some facts about cats
+GetFactsIntent let me know some facts about cats
+GetFactsIntent give me a cat fact
+GetFactsIntent what are some cat facts
+GetFactsIntent get me a cat fact
+GetFactsIntent give me some cat facts
