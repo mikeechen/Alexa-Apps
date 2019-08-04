@@ -2,7 +2,6 @@
 
 var AlexaSkill = require('./AlexaSkill');
 var https = require('https');
-var axios = require('axios');
 var APP_ID = undefined;
 var SKILL_NAME = 'Quote of the day';
 
@@ -13,13 +12,13 @@ var Quote = function () {
 Quote.prototype = Object.create(AlexaSkill.prototype);
 Quote.prototype.constructor = Quote;
 
-Quote.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
-    getQuote(response);
+Quote.prototype.eventHandlers.onLaunch = async function (launchRequest, session, response) {
+    await getQuote(response);
 };
 
 Quote.prototype.intentHandlers = {
-    "GetQuoteIntent": function (intent, session, response) {
-        getQuote(response);
+    "GetQuoteIntent": async function (intent, session, response) {
+        await getQuote(response);
     },
 
     "AMAZON.HelpIntent": function (intent, session, response) {
@@ -37,18 +36,35 @@ Quote.prototype.intentHandlers = {
     }
 };
 
-function getQuote(response) {
-  var url = 'http://quotes.rest/qod.json';
-  axios(url)
-    .then(function(res) {
-      var author = res.data.contents.quotes[0].author;
-      var quote = res.data.contents.quotes[0].quote;
-      var speechOutput = author + ' once said: ' + quote;
-      response.tell(speechOutput);
-    })
-    .catch(function(err) {
-      console.log("Got error: ", err);
-    });
+function httpGet() {
+    return new Promise(((resolve, reject) => {
+        var url = 'https://quotes.rest/qod.json';
+        const request = https.request(url, (response) => {
+            response.setEncoding('utf8');
+            let returnData = '';
+
+            response.on('data', (chunk) => {
+                returnData += chunk;
+            });
+
+            response.on('end', () => {
+                resolve(JSON.parse(returnData));
+            });
+
+            response.on('error', (error) => {
+                reject(error);
+            });
+        });
+        request.end();
+    }));
+}
+
+async function getQuote(response) {
+    const res = await httpGet();
+    const author = res.contents.quotes[0].author;
+    const quote = res.contents.quotes[0].quote;
+    const speechOutput = author + ' once said: ' + quote;
+    response.tell(speechOutput);
 }
 
 exports.handler = function (event, context) {
